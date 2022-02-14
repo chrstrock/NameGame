@@ -1,38 +1,35 @@
 package com.willowtree.namegame.web.entity;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-@Entity
 public class Game {
 
 	
 	//fields
-	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+
 	private UUID id;
 	
-	@Column(nullable = false)
+	
 	private int score;
 	
-	@Column(nullable = false)
+	
 	private boolean isPracticeMode; //boolean for binary reasons.  We only have 2 game modes.
 	
-	private List<Profile> gameProfiles;
+	private List<Profile> gameProfiles = new ArrayList<Profile>(6);
 	
 
 	public Game(boolean mode)
 	{
 		this.isPracticeMode = mode;
 		this.score = 0;
+		
+		Random rand = new Random();
+		
 	}
 	
 	

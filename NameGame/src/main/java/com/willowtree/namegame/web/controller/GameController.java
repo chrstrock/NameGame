@@ -37,7 +37,7 @@ public class GameController {
 	@ResponseStatus(HttpStatus.OK)
 	public void updateGame(@RequestBody Game game)
 	{
-		
+		//update score based on choice of image
 		
 	}
 	

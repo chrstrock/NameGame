@@ -1,6 +1,6 @@
 package com.willowtree.namegame.web.entity;
 
-import java.util.UUID;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -9,14 +9,32 @@ public class Headshot {
 
 	private String alt; //alternate text
 	private int height; //height in pixels of the image
-	private UUID id;
+	private String id;
 	private String mimeType;
 	private String type;
 	private String url;  //should this be a string or not?
+	private String width;
 	
 	public Headshot()
 	{
 		
+	}
+
+	public String getWidth() {
+		return width;
+	}
+
+	public void setWidth(String width) {
+		this.width = width;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId()
+	{
+		return id;
 	}
 
 	public String getAlt() {
@@ -33,14 +51,6 @@ public class Headshot {
 
 	public void setHeight(int height) {
 		this.height = height;
-	}
-
-	public UUID getId() {
-		return id;
-	}
-
-	public void setId(UUID id) {
-		this.id = id;
 	}
 
 	public String getMimeType() {

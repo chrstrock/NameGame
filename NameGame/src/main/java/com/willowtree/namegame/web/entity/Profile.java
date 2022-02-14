@@ -4,17 +4,16 @@ import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Profile {
 
 	
-	private UUID id;
+	private String id;
 	private String firstName;
 	private Headshot headshot;
 	private String jobTitle; //are we using this?
 	private String lastName;
 	private String slug; //are we using this?
-	private SocialLinks socialLinks;  //are we using this in the game?
 	private String type;
 	
 	public Profile() {
@@ -22,11 +21,11 @@ public class Profile {
 	}
 
 	//getters and setters
-	public UUID getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -70,13 +69,6 @@ public class Profile {
 		this.slug = slug;
 	}
 
-	public SocialLinks getSocialLinks() {
-		return socialLinks;
-	}
-
-	public void setSocialLinks(SocialLinks socialLinks) {
-		this.socialLinks = socialLinks;
-	}
 
 	public String getType() {
 		return type;
@@ -89,8 +81,10 @@ public class Profile {
 	@Override
 	public String toString() {
 		return "Profile [id=" + id + ", firstName=" + firstName + ", headshot=" + headshot + ", jobTitle=" + jobTitle
-				+ ", lastName=" + lastName + ", slug=" + slug + ", socialLinks=" + socialLinks + ", type=" + type + "]";
+				+ ", lastName=" + lastName + ", slug=" + slug + ", type=" + type + "]";
 	}
+
+	
 	
 	
 	
